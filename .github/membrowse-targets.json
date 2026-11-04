@@ -1,0 +1,50 @@
+[
+  {
+    "target_name": "pico2-serial",
+    "build_cmd": "make gen-device-rp && make tinygo && ./build/tinygo build -o build/membrowse/pico2-serial.elf -target=pico2 examples/serial",
+    "elf": "build/membrowse/pico2-serial.elf",
+    "ld": "targets/rp2350.ld targets/arm.ld",
+    "map_file": "",
+    "linker_vars": "__flash_size=4M"
+  },
+  {
+    "target_name": "esp32c3-generic-serial",
+    "build_cmd": "make gen-device-esp && make tinygo && ./build/tinygo build -o build/membrowse/esp32c3-generic-serial.elf -target=esp32c3-generic examples/serial",
+    "elf": "build/membrowse/esp32c3-generic-serial.elf",
+    "ld": "targets/esp32c3.ld",
+    "map_file": "",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "wioterminal-pininterrupt",
+    "build_cmd": "make gen-device-sam && make tinygo && ./build/tinygo build -o build/membrowse/wioterminal-pininterrupt.elf -target=wioterminal examples/pininterrupt",
+    "elf": "build/membrowse/wioterminal-pininterrupt.elf",
+    "ld": "targets/atsamd51.ld targets/arm.ld",
+    "map_file": "",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "microbit-serial",
+    "build_cmd": "make gen-device-nrf && make tinygo && ./build/tinygo build -o build/membrowse/microbit-serial.elf -target=microbit examples/serial",
+    "elf": "build/membrowse/microbit-serial.elf",
+    "ld": "targets/nrf51.ld targets/arm.ld",
+    "map_file": "",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "hifive1b-echo",
+    "build_cmd": "make gen-device-sifive && make tinygo && ./build/tinygo build -o build/membrowse/hifive1b-echo.elf -target=hifive1b examples/echo",
+    "elf": "build/membrowse/hifive1b-echo.elf",
+    "ld": "targets/hifive1b.ld targets/riscv.ld",
+    "map_file": "",
+    "linker_vars": ""
+  },
+  {
+    "target_name": "arduino-serial",
+    "build_cmd": "make gen-device-avr && make tinygo && ./build/tinygo build -o build/membrowse/arduino-serial.elf -target=arduino examples/serial",
+    "elf": "build/membrowse/arduino-serial.elf",
+    "ld": "src/device/avr/atmega328p.ld targets/avr.ld",
+    "map_file": "",
+    "linker_vars": "_bootloader_size=512 _stack_size=512"
+  }
+]
